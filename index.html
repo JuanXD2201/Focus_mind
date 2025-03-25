@@ -1,53 +1,145 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Focus Mind - Bienvenido</title>
-  <link rel="stylesheet" href="CSS/styles.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Focus Mind - Bienvenido</title>
+    <link rel="stylesheet" href="CSS/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+    <style>
+        #login, #register {
+            display: none;
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        #login input, #register input {
+            width: 90%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        #login button, #register button {
+            background-color: #0077b6;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+        }
+        #login button:hover, #register button:hover {
+            background-color: #005f87;
+        }
+        #carousel img, section img {
+            width: 200px;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
+    <script>
+        let users = JSON.parse(localStorage.getItem("users")) || [
+            { username: "sebastian", password: "sebas123" },
+            { username: "esteban", password: "esteban123" },
+            { username: "nicolas", password: "nicolas123" }
+        ];
+
+        function showSection(section) {
+            document.getElementById("login").style.display = "none";
+            document.getElementById("register").style.display = "none";
+            document.getElementById(section).style.display = "block";
+        }
+
+        function login() {
+            const username = document.getElementById("login-username").value;
+            const password = document.getElementById("login-password").value;
+            
+            const user = users.find(user => user.username === username && user.password === password);
+            
+            if (user) {
+                alert("Inicio de sesión exitoso");
+                window.location.href = "admin-dashboard.html"; 
+            } else {
+                alert("Credenciales incorrectas");
+            }
+        }
+
+        function register() {
+            const username = document.getElementById("register-username").value;
+            const password = document.getElementById("register-password").value;
+            
+            if (users.find(user => user.username === username)) {
+                alert("El usuario ya existe");
+                return;
+            }
+
+            users.push({ username, password });
+            localStorage.setItem("users", JSON.stringify(users));
+            alert("Registro exitoso, ahora puedes iniciar sesión");
+            showSection("login");
+        }
+    </script>
 </head>
 <body>
-  <header>
-    <h1>Bienvenido a Focus Mind</h1>
-    <p>Tu plataforma para potenciar tu bienestar mental</p>
-  </header>
+    <header>
+        <h1>Bienvenido a Focus Mind</h1>
+        <p>Tu plataforma para potenciar tu bienestar mental</p>
+    </header>
 
-  <nav>
-    <button onclick="location.href='documentation.html'">Ver Documentación</button>
-    <button onclick="location.href='contact.html'">Contáctenos</button>
-    <button onclick="location.href='login.html'">Iniciar Sesión</button>
-    <button onclick="location.href='register.html'">Registrarse</button>
-  </nav>
+    <nav>
+        <button onclick="window.location.href='Proyecto Focus Mind Documentacion.pdf'" download>Ver Documentación</button>
+        <button onclick="location.href='contact.html'">Contáctenos</button>
+        <button onclick="showSection('login')">Iniciar Sesión</button>
+        <button onclick="showSection('register')">Registrarse</button>
+    </nav>
 
-  <!-- Carrusel de Imágenes -->
-  <section id="carousel">
-    <img src="images/tdah1.jpg" alt="Información sobre TDAH" class="active">
-    <img src="images/tdah2.jpg" alt="Tratamiento del TDAH">
-    <img src="images/tdah3.jpg" alt="Bienestar Mental">
-  </section>
+    <section>
+        <h2>Quiénes Somos</h2>
+        <img src="images/heart.jpg" alt="Bienestar Mental">
+        <p>Focus Mind es una plataforma dedicada a brindar apoyo a personas con Trastorno por Déficit de Atención e Hiperactividad (TDAH)...</p>
+    </section>
 
-    <!-- Sección Quiénes Somos -->
-  <section>
-    <h2>Quiénes Somos</h2>
-    <p>Focus Mind es una plataforma dedicada a brindar apoyo a personas con Trastorno por Déficit de Atención e Hiperactividad (TDAH). Nuestro equipo está conformado por especialistas en salud mental, educadores y desarrolladores comprometidos con el bienestar de nuestros usuarios. Creemos en la importancia de ofrecer recursos accesibles, herramientas personalizadas y un entorno de apoyo para mejorar la calidad de vida de quienes viven con TDAH.</p>
-  </section>
+    <section>
+        <h2>¿Qué es el TDAH?</h2>
+        <img src="images/tdah.jpg" alt="Información sobre TDAH">
+        <p>El Trastorno por Déficit de Atención e Hiperactividad (TDAH) es una condición neurobiológica...</p>
+    </section>
 
-  <!-- Sección Qué es el TDAH -->
-  <section>
-    <h2>¿Qué es el TDAH?</h2>
-    <p>El Trastorno por Déficit de Atención e Hiperactividad (TDAH) es una condición neurobiológica que afecta la capacidad de concentración, el control de impulsos y la regulación emocional. Suele manifestarse durante la infancia, pero también puede persistir en la adultez. Los síntomas pueden variar, pero comúnmente incluyen dificultad para mantener la atención, hiperactividad e impulsividad. Con el apoyo adecuado, las personas con TDAH pueden desarrollar habilidades para afrontar los desafíos diarios y alcanzar sus objetivos.</p>
-  </section>
+    <section>
+        <h2>En Qué Consiste Focus Mind</h2>
+        <img src="images/cabeza.jpg" alt="Tratamiento del TDAH">
+        <p>Focus Mind ofrece un enfoque integral para el manejo del TDAH...</p>
+    </section>
+    
+    <section id="documentacion">
+        <h2>Documentación</h2>
+        <p>El proyecto <strong>Focus Mind</strong> cuenta con una documentación detallada sobre su desarrollo, objetivos, justificación y marco teórico.</p>
+        <a href="Proyecto Focus Mind Documentacion.pdf" download>📄 Descargar Documentación</a>
+    </section>
 
-  <!-- Sección En Qué Consiste Focus Mind -->
-  <section>
-    <h2>En Qué Consiste Focus Mind</h2>
-    <p>Focus Mind ofrece un enfoque integral para el manejo del TDAH. Nuestra plataforma incluye evaluaciones personalizadas, actividades interactivas y herramientas de seguimiento para medir el progreso. También proporcionamos recursos educativos para padres, maestros y profesionales de la salud mental. Además, contamos con un sistema de apoyo que conecta a los usuarios con especialistas, permitiendo el acceso a asesoramiento y terapias personalizadas.</p>
-  </section>
+    <section id="login">
+        <h2>Iniciar Sesión</h2>
+        <input type="text" id="login-username" placeholder="Usuario" required>
+        <input type="password" id="login-password" placeholder="Contraseña" required>
+        <button onclick="login()">Ingresar</button>
+    </section>
 
-  <footer>
-    <p>&copy; 2025 Focus Mind. Todos los derechos reservados.</p>
-  </footer>
+    <section id="register">
+        <h2>Registrarse</h2>
+        <input type="text" id="register-username" placeholder="Usuario" required>
+        <input type="password" id="register-password" placeholder="Contraseña" required>
+        <button onclick="register()">Registrarse</button>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Focus Mind. Todos los derechos reservados.</p>
+    </footer>
 </body>
 </html>
