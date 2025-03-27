@@ -1,11 +1,11 @@
 /* Variables Globales */
 :root {
-    --primary-color: #003366;
-    --secondary-color: #667788;
-    --hover-color: #506060;
+    --primary-color: #000000; /* Negro */
+    --secondary-color: #B4E7FA; /* Azul */
+    --hover-color: #A0D5F1; /* Azul más oscuro para hover */
     --danger-color: #d9534f;
     --danger-hover: #c9302c;
-    --background-light: #f4f4f4;
+    --background-light: #ffffff; /* Blanco */
     --white: #ffffff;
     --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     --border-radius: 8px;
@@ -30,7 +30,7 @@ header, footer {
 /* Botones */
 button, .admin-option, nav button {
     background-color: var(--secondary-color);
-    color: var(--white);
+    color: var(--primary-color); /* Negro para el texto */
     border: none;
     border-radius: 5px;
     padding: 10px 15px;
