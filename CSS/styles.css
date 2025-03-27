@@ -1,78 +1,169 @@
-/* Estilos generales */
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #e6eaf4;
-  color: #2e3b55;
-  text-align: center;
-}
-
-header {
-  background-color: #6a82fb;
-  color: white;
-  padding: 40px 20px;
-}
-
-nav {
-  margin: 20px 0;
-}
-
-button {
-  background-color: #7b68ee;
-  color: white;
-  border: none;
-  padding: 15px 30px;
-  margin: 10px;
-  font-size: 16px;
-  cursor: pointer;
-  border-radius: 5px;
-  transition: background-color 0.3s;
-}
-
-button:hover {
-  background-color: #5a47d4;
-}
-
-footer {
-  margin-top: 40px;
-  background-color: #2e3b55;
-  color: white;
-  padding: 10px 0;
-}
-
-/* Carrusel de imágenes */
-#carousel {
-  width: 100%;
-  overflow: hidden;
-  position: relative;
-}
-
-#carousel img {
-  width: 100%;
-  height: 500px;
-  object-fit: cover;
-  display: none;
-}
-
-#carousel img.active {
-  display: block;
-}
-
-/* Secciones */
-section {
-  padding: 60px 20px;
-}
-
-section:nth-child(even) {
-  background-color: #dcdff3;
-}
-
-h2 {
-  color: #6a82fb;
-}
-
-p {
-  line-height: 1.8;
-  color: #2e3b55;
-}
+/* Variables Globales */
+:root {
+    --primary-color: #003366;
+    --secondary-color: #667788;
+    --hover-color: #506060;
+    --danger-color: #d9534f;
+    --danger-hover: #c9302c;
+    --background-light: #f4f4f4;
+    --white: #ffffff;
+    --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    --border-radius: 8px;
+    --transition-speed: 0.3s;
+  }
+  
+  /* General */
+  body {
+    font-family: Arial, sans-serif;
+    background-color: var(--background-light);
+    margin: 0;
+    padding: 20px;
+  }
+  
+  header, footer {
+    background-color: var(--primary-color);
+    color: var(--white);
+    text-align: center;
+    padding: 20px;
+  }
+  
+  /* Botones */
+  button, .admin-option, nav button {
+    background-color: var(--secondary-color);
+    color: var(--white);
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color var(--transition-speed);
+  }
+  
+  button:hover, nav button:hover {
+    background-color: var(--hover-color);
+  }
+  
+  #logoutButton {
+    background-color: var(--danger-color);
+  }
+  
+  #logoutButton:hover {
+    background-color: var(--danger-hover);
+  }
+  
+  /* Dropdown */
+  .dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: var(--white);
+    box-shadow: var(--box-shadow);
+    list-style: none;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: var(--border-radius);
+  }
+  
+  .dropdown-menu li a {
+    text-decoration: none;
+    color: var(--primary-color);
+    display: block;
+    padding: 8px 12px;
+    border-radius: 5px;
+  }
+  
+  .dropdown-menu li a:hover {
+    background-color: #f0f0f0;
+  }
+  
+  /* Main Section */
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .info, .admin-option {
+    background-color: var(--white);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    margin: 15px;
+    padding: 20px;
+    max-width: 600px;
+    cursor: pointer;
+    transition: background-color var(--transition-speed);
+  }
+  
+  .admin-panel {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    max-width: 800px;
+  }
+  
+  .admin-option:hover {
+    background-color: #e7e7e7;
+  }
+  
+  h2, h3 {
+    color: var(--primary-color);
+  }
+  
+  /* Modal */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    animation: fadeIn var(--transition-speed);
+  }
+  
+  .modal-content {
+    background-color: var(--white);
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: var(--border-radius);
+    width: 300px;
+  }
+  
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .close:hover {
+    color: black;
+  }
+  
+  /* Inputs y Labels */
+  input[type="text"], input[type="password"], input[type="checkbox"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  /* Animación */
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  /* Responsividad */
+  @media (max-width: 600px) {
+    .admin-panel {
+      grid-template-columns: 1fr;
+    }
+  }
