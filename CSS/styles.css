@@ -10,25 +10,25 @@
     --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     --border-radius: 8px;
     --transition-speed: 0.3s;
-  }
-  
-  /* General */
-  body {
+}
+
+/* General */
+body {
     font-family: Arial, sans-serif;
     background-color: var(--background-light);
     margin: 0;
     padding: 20px;
-  }
-  
-  header, footer {
+}
+
+header, footer {
     background-color: var(--primary-color);
     color: var(--white);
     text-align: center;
     padding: 20px;
-  }
-  
-  /* Botones */
-  button, .admin-option, nav button {
+}
+
+/* Botones */
+button, .admin-option, nav button {
     background-color: var(--secondary-color);
     color: var(--white);
     border: none;
@@ -36,22 +36,27 @@
     padding: 10px 15px;
     cursor: pointer;
     transition: background-color var(--transition-speed);
-  }
-  
-  button:hover, nav button:hover {
+}
+
+button:hover, nav button:hover {
     background-color: var(--hover-color);
-  }
-  
-  #logoutButton {
+}
+
+button:focus, nav button:focus, .admin-option:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+#logoutButton {
     background-color: var(--danger-color);
-  }
-  
-  #logoutButton:hover {
+}
+
+#logoutButton:hover {
     background-color: var(--danger-hover);
-  }
-  
-  /* Dropdown */
-  .dropdown-menu {
+}
+
+/* Dropdown */
+.dropdown-menu {
     display: none;
     position: absolute;
     background-color: var(--white);
@@ -60,29 +65,29 @@
     padding: 10px;
     margin-top: 10px;
     border-radius: var(--border-radius);
-  }
-  
-  .dropdown-menu li a {
+}
+
+.dropdown-menu li a {
     text-decoration: none;
     color: var(--primary-color);
     display: block;
     padding: 8px 12px;
     border-radius: 5px;
-  }
-  
-  .dropdown-menu li a:hover {
+}
+
+.dropdown-menu li a:hover {
     background-color: #f0f0f0;
-  }
-  
-  /* Main Section */
-  main {
+}
+
+/* Main Section */
+main {
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 20px;
-  }
-  
-  .info, .admin-option {
+}
+
+.info, .admin-option {
     background-color: var(--white);
     border-radius: var(--border-radius);
     box-shadow: var(--box-shadow);
@@ -91,25 +96,25 @@
     max-width: 600px;
     cursor: pointer;
     transition: background-color var(--transition-speed);
-  }
-  
-  .admin-panel {
+}
+
+.admin-panel {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 20px;
     max-width: 800px;
-  }
-  
-  .admin-option:hover {
+}
+
+.admin-option:hover {
     background-color: #e7e7e7;
-  }
-  
-  h2, h3 {
+}
+
+h2, h3 {
     color: var(--primary-color);
-  }
-  
-  /* Modal */
-  .modal {
+}
+
+/* Modal */
+.modal {
     display: none;
     position: fixed;
     z-index: 1000;
@@ -119,51 +124,51 @@
     height: 100%;
     background-color: rgba(0, 0, 0, 0.7);
     animation: fadeIn var(--transition-speed);
-  }
-  
-  .modal-content {
+}
+
+.modal-content {
     background-color: var(--white);
     margin: 10% auto;
     padding: 20px;
     border-radius: var(--border-radius);
     width: 300px;
-  }
-  
-  .close {
+}
+
+.close {
     color: #aaa;
     float: right;
     font-size: 28px;
     font-weight: bold;
     cursor: pointer;
-  }
-  
-  .close:hover {
+}
+
+.close:hover {
     color: black;
-  }
-  
-  /* Inputs y Labels */
-  input[type="text"], input[type="password"], input[type="checkbox"] {
+}
+
+/* Inputs y Labels */
+input[type="text"], input[type="password"], input[type="checkbox"] {
     width: 100%;
     padding: 10px;
     margin: 10px 0;
     border: 1px solid #ccc;
     border-radius: 5px;
-  }
-  
-  label {
+}
+
+label {
     display: block;
     margin-bottom: 10px;
-  }
-  
-  /* Animación */
-  @keyframes fadeIn {
+}
+
+/* Animación */
+@keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
-  }
-  
-  /* Responsividad */
-  @media (max-width: 600px) {
+}
+
+/* Responsividad */
+@media (max-width: 600px) {
     .admin-panel {
-      grid-template-columns: 1fr;
+        grid-template-columns: 1fr;
     }
-  }
+}
