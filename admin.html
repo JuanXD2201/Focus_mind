@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles.css" />
+  <title>Panel de Administrador - Focus Mind</title>
+</head>
+<body>
+  <header>
+    <h1>Panel de Administrador</h1>
+    <p>Administra y supervisa las actividades de Focus Mind</p>
+    <button onclick="logout()" class="logout-btn">Cerrar Sesión</button>
+  </header>
+
+  <main>
+    <section class="admin-panel">
+      <div class="admin-option" onclick="window.location.href='gestion_usuarios.html'">
+        <h3>Gestión de Usuarios</h3>
+        <p>Administra cuentas, actualiza información y gestiona permisos.</p>
+      </div>
+
+      <div class="admin-option" onclick="window.location.href='configuracion_actividades.html'">
+        <h3>Configurar Actividades</h3>
+        <p>Crea, edita y elimina actividades para los usuarios.</p>
+      </div>
+
+      <div class="admin-option" onclick="window.location.href='generar_estadisticas.html'">
+        <h3>Generar Estadísticas</h3>
+        <p>Consulta y analiza estadísticas sobre las actividades realizadas.</p>
+      </div>
+
+      <div class="admin-option" onclick="window.location.href='administrar_calendarios.html'">
+        <h3>Administrar Calendarios</h3>
+        <p>Gestiona los calendarios de los usuarios para un mejor seguimiento.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Focus Mind. Todos los derechos reservados.</p>
+  </footer>
+
+  <script src="admin.js"></script>
+</body>
+</html>
