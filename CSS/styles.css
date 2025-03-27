@@ -1,12 +1,12 @@
 /* Variables Globales */
 :root {
     --primary-color: #000000; /* Negro */
-    --secondary-color: #B4E7FA; /* Azul */
-    --hover-color: #A0D5F1; /* Azul más oscuro para hover */
-    --danger-color: #d9534f;
-    --danger-hover: #c9302c;
+    --secondary-color: #A3C1DA; /* Azul claro pastel */
+    --hover-color: #8BB8D8; /* Azul más oscuro para hover */
+    --danger-color: #d9534f; /* Color de peligro */
+    --danger-hover: #c9302c; /* Hover de peligro */
     --background-light: #ffffff; /* Blanco */
-    --white: #ffffff;
+    --white: #ffffff; /* Blanco */
     --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     --border-radius: 8px;
     --transition-speed: 0.3s;
@@ -76,7 +76,7 @@ button:focus, nav button:focus, .admin-option:focus {
 }
 
 .dropdown-menu li a:hover {
-    background-color: #f0f0f0;
+    background-color: #f0f0f0; /* Color de fondo en hover */
 }
 
 /* Main Section */
@@ -106,7 +106,7 @@ main {
 }
 
 .admin-option:hover {
-    background-color: #e7e7e7;
+    background-color: #e7e7e7; /* Color de fondo en hover */
 }
 
 h2, h3 {
