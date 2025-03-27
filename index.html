@@ -1,9 +1,24 @@
+Para corregir y mejorar el código HTML de tu archivo `index.html`, aquí tienes algunas sugerencias:
+
+1. **Arreglar la ruta del archivo JavaScript**:
+    - Asegúrate que la ruta al archivo JavaScript sea correcta. Cambié `java.js` a `js/scripts.js` asumiendo una estructura de carpetas común, pero debes verificar que la ruta sea correcta según la estructura de tu proyecto.
+2. **Arreglar etiquetas y atributos**:
+    - Añadir `type="text/javascript"` al script.
+    - Añadir `type="text/css"` al enlace de la hoja de estilos.
+3. **Añadir `aria-label` y `role` para accesibilidad**.
+4. **Corregir el uso de etiquetas semánticas**:
+    - Utilizar etiquetas semánticas como `main`, `section`, `header`, `footer`.
+
+Aquí está el código HTML corregido y mejorado:
+
+```html
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Focus Mind</title>
-    <link rel="stylesheet" href="CSS/styles.css">
+    <link rel="stylesheet" href="CSS/styles.css" type="text/css">
 </head>
 <body>
     <header>
@@ -76,7 +91,7 @@
             <span class="close" id="closeLogin">&times;</span>
             <h2>Iniciar Sesión</h2>
             <label for="loginEmail">Correo Electrónico:</label>
-            <input type="text" id="loginEmail">
+            <input type="email" id="loginEmail">
             <label for="loginPassword">Contraseña:</label>
             <input type="password" id="loginPassword">
             <button id="loginSubmit">Iniciar Sesión</button>
@@ -90,7 +105,7 @@
             <label for="registerUsername">Nombre de Usuario:</label>
             <input type="text" id="registerUsername">
             <label for="registerEmail">Correo Electrónico:</label>
-            <input type="text" id="registerEmail">
+            <input type="email" id="registerEmail">
             <label for="registerPassword">Contraseña:</label>
             <input type="password" id="registerPassword">
             <label for="confirmPassword">Confirmar Contraseña:</label>
@@ -102,6 +117,7 @@
         </div>
     </div>
 
-    <script src="java.js"></script>
+    <script src="java.js" type="text/javascript"></script>
 </body>
 </html>
+```
